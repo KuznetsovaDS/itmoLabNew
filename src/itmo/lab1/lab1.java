@@ -9,13 +9,13 @@ public class lab1 {
         System.out.println("знаю");
         System.out.println("Java.");
 
-        int result1 = (45 + 10) * (10 / 3);
+        double result1 = (45.0 + 10) * (10.0 / 3);
         int result2 = 29 * 4 * (-15);
         System.out.println("Первый ответ " + result1);
         System.out.println("Второй ответ " + result2);
 
         int number = 10500;
-        int result = (number / 10) / 10;
+        double result = ((double)number / 10) / 10;
         System.out.println("Результат 3-го задания " + result);
 
         double num1 = 3.6;
