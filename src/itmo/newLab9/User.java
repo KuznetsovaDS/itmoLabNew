@@ -1,4 +1,5 @@
 package itmo.newLab9;
+import java.util.Objects;
 
 public class User {
 
@@ -13,5 +14,17 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+    @Override
+    public int hashCode(){
+        return Objects.hash(name);
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        User user = (User) obj;
+        return Objects.equals(name, user.name);
+    }
+
 }
 
