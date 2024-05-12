@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Task {
-    public List<String> readLines(String path, int lineWidth) throws IOException {
+    public List<String> readLines(String path, int lineWidth)  {
         List<String> lines = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
@@ -17,25 +17,33 @@ public class Task {
                 }
             }
         }
+        catch (IOException e) {
+               System.err.println(e.getMessage());
+        }
         return lines;
     }
-    public void writeToFile(String path2, String line) throws IOException {
+    public void writeToFile(String path2, String line) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path2, true))) {
             writer.write(line);
             writer.newLine();
             System.out.println("Строка записана");
         }
+        catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
-    public void writeToFile(String path2, List<String> lines) throws IOException {
+    public void writeToFile(String path2, List<String> lines) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path2))) {
             for (String line : lines) {
                 writer.write(line);
                 writer.newLine();
             }
         }
+        catch (IOException e) {
+            System.err.println(e.getMessage());}
     }
-    public void mixFiles(String path, String path2, String newFile) throws IOException {
+    public void mixFiles(String path, String path2, String newFile)  {
         List<String> mixLines = new ArrayList<>();
 
         List<String> lines1 = readLines(path, 150);
@@ -48,7 +56,7 @@ public class Task {
         System.out.println("Файлы склеены");
     }
 
-    public void replaceSymbols(String path3) throws IOException {
+    public void replaceSymbols(String path3) {
         List<String> lines = readLines(path3, 150);
         List<String> replaceSym = new ArrayList<>();
         for (String line : lines) {
