@@ -18,7 +18,7 @@ public class Task {
             }
         }
         catch (IOException e) {
-               System.err.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
         return lines;
     }
@@ -67,4 +67,3 @@ public class Task {
         System.out.println("Все кроме букв и цифр заменено на $");
     }
 }
-

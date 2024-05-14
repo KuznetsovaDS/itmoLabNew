@@ -20,8 +20,8 @@ public class Main {
             newTask.mixFiles(firstText, addLine, mixFiles);
             newTask.replaceSymbols(changeSym);
         }
-        catch (IOException e) {
-            e.printStackTrace();
+        catch (Exception e) {
+            System.err.println(e.getMessage());
         }
 }
 }
